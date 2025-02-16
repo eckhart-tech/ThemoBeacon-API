@@ -7,6 +7,10 @@ from .command import CommandBase
 
 
 class BaseAction:
+    # Transmit Handle 0x0021
+    TX_CHAR_UUID = '0000fff5-0000-1000-8000-00805F9B34FB'
+    # Read Handle 0x0024
+    RX_CHAR_UUID = '0000fff3-0000-1000-8000-00805F9B34FB'
 
     def __init__(self,**kwargs):
         self.args = kwargs
@@ -34,10 +38,7 @@ class BaseAction:
             traceback.print_exc()
 
 class CommandBaseAction(BaseAction):
-    # Transmit Handle 0x0021
-    TX_CHAR_UUID = '0000fff5-0000-1000-8000-00805F9B34FB'
-    # Read Handle 0x0024
-    RX_CHAR_UUID = '0000fff3-0000-1000-8000-00805F9B34FB'
+
 
     def __init__(self,mac : str, **kwargs):
         super().__init__(**kwargs)
