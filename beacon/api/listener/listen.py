@@ -45,3 +45,6 @@ class Listener(BaseAction):
             return
         try:
             await self.client.start_notify(self.RX_CHAR_UUID, self.callback)
+        except Exception as exc:
+            print('exception ' + str(exc))
+            return

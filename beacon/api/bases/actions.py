@@ -38,8 +38,6 @@ class BaseAction:
             traceback.print_exc()
 
 class CommandBaseAction(BaseAction):
-
-
     def __init__(self,mac : str, **kwargs):
         super().__init__(**kwargs)
         self.mac = mac
