@@ -1,4 +1,4 @@
 from sys import argv
 from .main import run
 
-run(argv)
+run(argv[1:])

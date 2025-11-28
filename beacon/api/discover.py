@@ -11,7 +11,7 @@ class GlobalScan(ScannerAction):
 
     def action(self,response):
         for key, value in response:
-            print(f'Found {response.name}@{key}: [{response.mac}] {value.hex()}')
+            print(f'Found {response.name}@{key}: [{response.mac}] MAC {value.mac} HEX {value.hex()}')
 
 
 class DiscoveryScan(ScannerAction):
@@ -35,7 +35,7 @@ class DiscoveryScan(ScannerAction):
         if len(adverts)>0:
             self.macs.append(response.mac)
             self.beacons.append(adverts[0])
-            print(f'Found {response.name}@{adverts[0].id}: [{response.mac}] {adverts[0].hex()}')
+            print(f'Found {response.name}@{adverts[0].id}: [{response.mac}] MAC {adverts[0].mac} HEX {adverts[0].hex()}')
 
 
 class BeaconScan(ScannerAction):
